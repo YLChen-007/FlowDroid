@@ -1,7 +1,7 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "java.jdt.ls.java.home": "/opt/jdk-11",
-    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.updateBuildConfiguration": "automatic",
     "java.test.config": {
         "vmargs": ["-Xmx320G"]
     }

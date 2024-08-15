@@ -112,8 +112,8 @@
 		<dependency>
 			<groupId>org.soot-oss</groupId>
 			<artifactId>soot</artifactId>
-			<version>4.6.0-20240502.080242-9</version>
-			<!-- <version>${soot.version}</version> -->
+			<!-- <version>4.6.0-20240502.080242-9</version> -->
+			<version>${soot.version}</version>
 
 		</dependency>
 		<dependency>
