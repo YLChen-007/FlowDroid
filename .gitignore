@@ -6,3 +6,5 @@ soot-infoflow-summaries/target/
 .idea/
 *.iml
 target/
+analysisJar/
+

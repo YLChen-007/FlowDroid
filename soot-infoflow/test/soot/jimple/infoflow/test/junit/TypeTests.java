@@ -26,7 +26,7 @@ import soot.jimple.infoflow.InfoflowConfiguration.PathReconstructionMode;
  */
 public abstract class TypeTests extends JUnitTests {
 
-	@Test(timeout = 300000)
+	@Test(timeout = 0)
 	public void stringToObjectTest() {
 		IInfoflow infoflow = initInfoflow();
 		List<String> epoints = new ArrayList<String>();

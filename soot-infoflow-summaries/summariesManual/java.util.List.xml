@@ -11,14 +11,14 @@
                        ParameterIndex="0" />
             </constraints>
             <flows>
-                <flow isAlias="true" typeChecking="false" final="true">
+                <flow isAlias="false" typeChecking="false" final="true">
                     <from sourceSinkType="Parameter" ParameterIndex="1" />
                     <to sourceSinkType="Field"
                         AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                         AccessPathTypes="[java.lang.Object[]]"
                         constrained="True" />
                 </flow>
-                <flow isAlias="true" typeChecking="false" final="true">
+                <flow isAlias="false" typeChecking="false" final="true">
                     <from sourceSinkType="Field"
                               AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                               AccessPathTypes="[java.lang.Object[]]" />
@@ -41,7 +41,7 @@
                        ImplicitLocation="Next" />
             </constraints>
             <flows>
-                <flow isAlias="true" typeChecking="false">
+                <flow isAlias="false" typeChecking="false">
                     <from sourceSinkType="Parameter" ParameterIndex="0"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
@@ -69,15 +69,15 @@
         </method>
         <method id="java.util.ListIterator listIterator()">
             <flows>
-                <flow isAlias="true" typeChecking="false" final="true">
+                <flow isAlias="false" typeChecking="false">
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
                     <to sourceSinkType="Return"
-                        AccessPath="[java.util.Iterator: java.lang.Object[] innerArray]"
-                        AccessPathTypes="[java.lang.Object[]]" />
+                        AccessPath="[java.util.Iterator: java.lang.Object innerCollection]"
+                        AccessPathTypes="[java.lang.Object]" />
                 </flow>
-                <flow isAlias="true" typeChecking="false">
+                <flow isAlias="false" typeChecking="false">
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
@@ -96,15 +96,15 @@
         </method>
         <method id="java.util.ListIterator listIterator(int)">
             <flows>
-                <flow isAlias="true" typeChecking="false" final="true">
+                <flow isAlias="false" typeChecking="false">
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
                     <to sourceSinkType="Return"
-                        AccessPath="[java.util.Iterator: java.lang.Object[] innerArray]"
-                        AccessPathTypes="[java.lang.Object[]]" />
+                        AccessPath="[java.util.Iterator: java.lang.Object innerCollection]"
+                        AccessPathTypes="[java.lang.Object]" />
                 </flow>
-                <flow isAlias="true" typeChecking="false">
+                <flow isAlias="false" typeChecking="false">
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
@@ -127,14 +127,14 @@
                        ParameterIndex="0" />
             </constraints>
             <flows>
-                <flow isAlias="true" typeChecking="false" final="true">
+                <flow isAlias="false" typeChecking="false" final="true">
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]"
                           constrained="true" />
                     <to sourceSinkType="Return" />
                 </flow>
-                <flow isAlias="true" typeChecking="false" final="true">
+                <flow isAlias="false" typeChecking="false" final="true">
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]"
@@ -270,7 +270,7 @@
         </method>
         <method id="void sort(java.util.Comparator)">
             <flows>
-                <flow isAlias="true" typeChecking="false">
+                <flow isAlias="false" typeChecking="false">
                     <from sourceSinkType="Field"
                            AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                            AccessPathTypes="[java.lang.Object[]]" />
@@ -315,20 +315,12 @@
         </method>
         <method id="java.util.Spliterator spliterator()">
             <flows>
-                <flow isAlias="true">
+                <flow>
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
                     <to sourceSinkType="Field"
                         AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
-                        AccessPathTypes="[java.lang.Object[]]" />
-                </flow>
-                <flow isAlias="true" typeChecking="false">
-                    <from sourceSinkType="Field"
-                          AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
-                          AccessPathTypes="[java.lang.Object[]]" />
-                    <to sourceSinkType="Return"
-                        AccessPath="[java.util.Spliterator: java.lang.Object[] innerArray]"
                         AccessPathTypes="[java.lang.Object[]]" />
                 </flow>
             </flows>
@@ -341,7 +333,7 @@
         </method>
         <method id="java.lang.Object[] toArray()">
             <flows>
-                <flow isAlias="true">
+                <flow>
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />
@@ -351,7 +343,7 @@
         </method>
         <method id="java.lang.Object[] toArray(java.lang.Object[])">
             <flows>
-                <flow isAlias="true">
+                <flow>
                     <from sourceSinkType="Field"
                           AccessPath="[java.util.Collection: java.lang.Object[] innerArray]"
                           AccessPathTypes="[java.lang.Object[]]" />

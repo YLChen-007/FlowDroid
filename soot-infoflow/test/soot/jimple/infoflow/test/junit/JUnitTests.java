@@ -75,9 +75,11 @@ public abstract class JUnitTests {
 		}
 		appPath = appPathBuilder.toString();
 		StringBuilder libPathBuilder = new StringBuilder();
-		appendWithSeparator(libPathBuilder,
+ 		appendWithSeparator(libPathBuilder,
 				new File(System.getProperty("java.home") + File.separator + "lib" + File.separator + "rt.jar"));
-		appendWithSeparator(libPathBuilder, new File("/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar"));
+		// appendWithSeparator(libPathBuilder, new File("/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar"));
+		appendWithSeparator(libPathBuilder, new File("/opt/jdk-11/rt.jar"));
+
 		appendWithSeparator(libPathBuilder, new File("C:\\Program Files\\Java\\java-se-8u41-ri\\jre\\lib\\rt.jar"));
 		libPath = libPathBuilder.toString();
 		if (libPath.isEmpty())
@@ -98,7 +100,7 @@ public abstract class JUnitTests {
 		sinks.add(sinkInt);
 		sinks.add(sinkBoolean);
 		sinks.add(sinkDouble);
-	}
+ 	}
 
 	private static void addTestPathes(File f, StringBuilder appPathBuilder) throws IOException {
 		File testSrc1 = new File(f, "bin");

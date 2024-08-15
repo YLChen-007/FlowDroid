@@ -138,12 +138,7 @@
 			</flows>
 		</method>
 		<method id="void setStackTrace(java.lang.StackTraceElement[])">
-			<clears>
-				<clear sourceSinkType="Field"
-						AccessPath="[java.lang.Throwable: java.lang.StackTraceElement[] stackTrace]"
-						AccessPathTypes="[java.lang.StackTraceElement[]]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="true" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field"

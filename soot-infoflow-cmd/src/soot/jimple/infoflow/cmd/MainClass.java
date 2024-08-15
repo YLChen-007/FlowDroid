@@ -252,6 +252,25 @@ public class MainClass {
 	}
 
 	public static void main(String[] args) throws Exception {
+		/*
+-a
+"D:\taint_analysis\FlowDroid\DroidBench\apk\Aliasing\Merge1.apk"
+-p
+D:\taint_analysis\FlowDroid\soot-infoflow-android\androidJar\android.jar
+-s
+D:\taint_analysis\FlowDroid\soot-infoflow-android\SourcesAndSinks.txt
+-o
+result.xml */
+		args = new String[] {
+				"-a",
+				"D:\\taint_analysis\\FlowDroid\\DroidBench\\apk\\Aliasing\\Merge1.apk",
+				"-p",
+				"D:\\taint_analysis\\FlowDroid\\soot-infoflow-android\\androidJar\\android.jar",
+				"-s",
+				"D:\\taint_analysis\\FlowDroid\\soot-infoflow-android\\SourcesAndSinks.txt",
+				"-o",
+				"result.xml"
+		};
 		MainClass main = new MainClass();
 		main.run(args);
 	}

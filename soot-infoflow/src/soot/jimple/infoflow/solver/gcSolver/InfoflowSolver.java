@@ -11,6 +11,7 @@
 package soot.jimple.infoflow.solver.gcSolver;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import heros.FlowFunction;
@@ -106,8 +107,18 @@ public class InfoflowSolver extends IFDSSolver<Unit, Abstraction, IInfoflowCFG>
 	@Override
 	protected Set<Abstraction> computeNormalFlowFunction(FlowFunction<Abstraction> flowFunction, Abstraction d1,
 			Abstraction d2) {
-		if (flowFunction instanceof SolverNormalFlowFunction)
+		if (flowFunction instanceof SolverNormalFlowFunction){
+
+			// try{
+			// 	Set<Abstraction> computeTargets = ((SolverNormalFlowFunction) flowFunction).computeTargets(d1, d2);
+			// 	return computeTargets;
+			// }catch(Throwable e){
+			// 	return new HashSet<Abstraction>();
+			// }
+
 			return ((SolverNormalFlowFunction) flowFunction).computeTargets(d1, d2);
+
+		}
 		else
 			return flowFunction.computeTargets(d2);
 	}

@@ -31,12 +31,12 @@
 		</method>
 		<method id="java.lang.String toString()">
 			<flows>
-				<flow isAlias="false" typeChecking="false">
+				<flow isAlias="true" typeChecking="false">
 					<from sourceSinkType="Field" AccessPath="[android.util.Pair: java.lang.Object first]"
 						AccessPathTypes="[java.lang.Object]" />
 					<to sourceSinkType="Return" />
 				</flow>
-				<flow isAlias="false" typeChecking="false">
+				<flow isAlias="true" typeChecking="false">
 					<from sourceSinkType="Field" AccessPath="[android.util.Pair: java.lang.Object second]"
 						AccessPathTypes="[java.lang.Object]" />
 					<to sourceSinkType="Return" />

@@ -7,12 +7,7 @@
 	</hierarchy>
 	<methods>
 		<method id="void setURI(java.net.URI)">
-			<clears>
-				<clear sourceSinkType="Field"
-						AccessPath="[org.apache.http.client.methods.HttpRequestBase: java.lang.String uri]"
-						AccessPathTypes="[java.lang.String]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="true" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field"

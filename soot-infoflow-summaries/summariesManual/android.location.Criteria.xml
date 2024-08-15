@@ -110,12 +110,7 @@
 			</flows>
 		</method>
 		<method id="void setAccuracy(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: int accuracy]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -125,12 +120,7 @@
 			</flows>
 		</method>
 		<method id="void setAltitudeRequired(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: boolean altitudeRequired]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -140,12 +130,7 @@
 			</flows>
 		</method>
 		<method id="void setBearingAccuracy(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: int bearingAccuracy]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -155,12 +140,7 @@
 			</flows>
 		</method>
 		<method id="void setBearingRequired(float)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: boolean bearingRequired]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -170,12 +150,7 @@
 			</flows>
 		</method>
 		<method id="void setCostAllowed(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: boolean costAllowed]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -185,12 +160,7 @@
 			</flows>
 		</method>
 		<method id="void setHorizontalAccuracy(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: int horizontalAccuracy]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -200,12 +170,7 @@
 			</flows>
 		</method>
 		<method id="void setPowerRequirement(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: int powerRequirement]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -215,12 +180,7 @@
 			</flows>
 		</method>
 		<method id="void setSpeedAccuracy(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: int speedAccuracy]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -230,12 +190,7 @@
 			</flows>
 		</method>
 		<method id="void setSpeedRequired(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: boolean speedRequired]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"
@@ -245,12 +200,7 @@
 			</flows>
 		</method>
 		<method id="void setVerticalAccuracy(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="android.location.Criteria"
-						AccessPath="[android.location.Criteria: int verticalAccuracy]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="android.location.Criteria"

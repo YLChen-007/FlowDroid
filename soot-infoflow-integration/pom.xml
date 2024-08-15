@@ -132,8 +132,9 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20240303</version>
+            <version>20231013</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 </project>

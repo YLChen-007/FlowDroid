@@ -1515,6 +1515,8 @@ public class SetupApplication implements ITaintWrapperDataFlowAnalysis {
 		if (sourceSinkFile != null && !sourceSinkFile.isEmpty())
 			config.getAnalysisFileConfig().setSourceSinkFile(sourceSinkFile);
 
+//		config.getAnalysisFileConfig().setOutputFile("flowdroidResult.xml");
+
 		return runInfoflow();
 	}
 
@@ -1662,6 +1664,10 @@ public class SetupApplication implements ITaintWrapperDataFlowAnalysis {
 		else
 			logger.info("Running data flow analysis on {} with {} sources and {} sinks...", apkFileLocation,
 					sources == null ? 0 : sources.size(), sinks == null ? 0 : sinks.size());
+
+
+//		createMainMethod(entrypoint);
+
 
 		// Create a new entry point and compute the flows in it. If we
 		// analyze all components together, we do not need a new callgraph,

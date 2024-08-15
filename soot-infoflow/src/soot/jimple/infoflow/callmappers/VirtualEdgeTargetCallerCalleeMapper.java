@@ -35,8 +35,10 @@ public class VirtualEdgeTargetCallerCalleeMapper implements ICallerCalleeArgumen
 
 	@Override
 	public int getCallerIndexOfCalleeParameter(int calleeParamIndex) {
-		if (calleeParamIndex == BASE_OBJECT)
+		if (calleeParamIndex == BASE_OBJECT){
+			// throw new RuntimeException("The base object of the callee is not relevant for virtual edges");
 			return virtualEdgeTarget.getArgIndex();
+		}
 		else {
 			for (AbstractParameterMapping i : directTarget.getParameterMappings()) {
 				if (i instanceof DirectParameterMapping) {

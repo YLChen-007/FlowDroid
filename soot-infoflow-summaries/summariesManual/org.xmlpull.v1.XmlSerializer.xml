@@ -171,12 +171,7 @@
 			</flows>
 		</method>
 		<method id="void setOutput(java.io.OutputStream,java.lang.String)">
-			<clears>
-				<clear sourceSinkType="Field"
-						AccessPath="[org.xmlpull.v1.XmlSerializer: java.io.OutputStream outputStream]"
-						AccessPathTypes="[java.io.OutputStream]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="true">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field"
@@ -186,12 +181,7 @@
 			</flows>
 		</method>
 		<method id="void setOutput(java.io.Writer)">
-			<clears>
-				<clear sourceSinkType="Field"
-						AccessPath="[org.xmlpull.v1.XmlSerializer: java.io.Writer writer]"
-						AccessPathTypes="[java.io.Writer]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="true">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field"
@@ -201,13 +191,7 @@
 			</flows>
 		</method>
 		<method id="void setProperty(java.lang.String,java.lang.Object)">
-			<clears>
-				<clear sourceSinkType="Field" AccessPath="[org.xmlpull.v1.XmlSerializer: java.lang.String[] propertyKeys]"
-						AccessPathTypes="[java.lang.String[]]" />
-				<clear sourceSinkType="Field" AccessPath="[org.xmlpull.v1.XmlSerializer: java.lang.Object[] propertyValues]"
-						AccessPathTypes="[java.lang.Object[]]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" AccessPath="[org.xmlpull.v1.XmlSerializer: java.lang.String[] propertyKeys]"

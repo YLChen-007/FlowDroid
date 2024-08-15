@@ -189,14 +189,6 @@
 						AccessPath="[java.io.InputStream: java.net.URL url]"
 						AccessPathTypes="[java.net.URL]" />
 				</flow>
-				<flow isAlias="false" typeChecking="false">
-					<from sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: java.net.URL url]"
-						AccessPathTypes="[java.net.URL]" />
-					<to sourceSinkType="Return" BaseType="java.io.InputStream"
-						AccessPath="[java.io.InputStream: byte[] innerArray]"
-						AccessPathTypes="[byte[]]" />
-				</flow>
 			</flows>
 		</method>
 		<method id="java.io.OutputStream getOutputStream()">
@@ -208,14 +200,6 @@
 					<to sourceSinkType="Return" BaseType="java.io.OutputStream"
 						AccessPath="[java.io.OutputStream: java.net.URL url]"
 						AccessPathTypes="[java.net.URL]" />
-				</flow>
-				<flow isAlias="false" typeChecking="false">
-					<from sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: byte[] bytesWritten]"
-						AccessPathTypes="[byte[]]" />
-					<to sourceSinkType="Return" BaseType="java.io.OutputStream"
-						AccessPath="[java.io.OutputStream: byte[] innerArray]"
-						AccessPathTypes="[byte[]]" />
 				</flow>
 			</flows>
 		</method>
@@ -299,12 +283,7 @@
 			</flows>
 		</method>
 		<method id="void setAllowUserInteraction(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: boolean allowUserInteraction]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -314,12 +293,7 @@
 			</flows>
 		</method>
 		<method id="void setConnectTimeout(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: int connectTimeout]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -329,12 +303,7 @@
 			</flows>
 		</method>
 		<method id="void setDefaultUseCaches(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: boolean defaultUseCaches]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -344,12 +313,7 @@
 			</flows>
 		</method>
 		<method id="void setDoInput(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: boolean doInput]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -359,12 +323,7 @@
 			</flows>
 		</method>
 		<method id="void setDoOutput(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: boolean doOutput]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -374,12 +333,7 @@
 			</flows>
 		</method>
 		<method id="void setIfModifiedSince(long)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: long ifModifiedSince]"
-						AccessPathTypes="[long]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -389,12 +343,7 @@
 			</flows>
 		</method>
 		<method id="void setReadTimeout(int)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: int readTimeout]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -404,15 +353,7 @@
 			</flows>
 		</method>
 		<method id="void setRequestProperty(java.lang.String,java.lang.String)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: java.lang.String[] requestKeys]"
-						AccessPathTypes="[java.lang.String[]]" />
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: java.lang.String[] requestValues]"
-						AccessPathTypes="[java.lang.String[]]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"
@@ -428,12 +369,7 @@
 			</flows>
 		</method>
 		<method id="void setUseCaches(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" BaseType="java.net.URLConnection"
-						AccessPath="[java.net.URLConnection: boolean useCaches]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" BaseType="java.net.URLConnection"

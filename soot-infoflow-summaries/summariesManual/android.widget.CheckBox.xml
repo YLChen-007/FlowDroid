@@ -11,11 +11,7 @@
 			</flows>
 		</method>
 		<method id="void setChecked(boolean)">
-			<clears>
-				<clear sourceSinkType="Field" AccessPath="[android.widget.CheckBox: boolean isChecked]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field" AccessPath="[android.widget.CheckBox: boolean isChecked]"

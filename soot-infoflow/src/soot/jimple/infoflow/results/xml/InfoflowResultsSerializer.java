@@ -265,9 +265,12 @@ public class InfoflowResultsSerializer {
 		if (config.getEnableLineNumbers())
 			writer.writeAttribute(XmlConstants.Attributes.linenumber,
 					String.valueOf(sink.getStmt().getJavaSourceStartLineNumber()));
-		if (sink.getDefinition().getCategory() != null)
+		if (sink.getDefinition().getCategory() != null) {
 			writer.writeAttribute(XmlConstants.Attributes.category,
 					sink.getDefinition().getCategory().getHumanReadableDescription());
+//			writer.writeAttribute(XmlConstants.Attributes.category,
+//					sink.getDefinition().toString());
+		}
 		if (icfg != null)
 			writer.writeAttribute(XmlConstants.Attributes.method, icfg.getMethodOf(sink.getStmt()).getSignature());
 		ISourceSinkDefinition def = sink.getDefinition();

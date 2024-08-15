@@ -170,12 +170,7 @@
 			</flows>
 		</method>
 		<method id="void set(int)">
-			<clears>
-				<clear sourceSinkType="Field"
-						AccessPath="[java.util.concurrent.atomic.AtomicInteger: int value]"
-						AccessPathTypes="[int]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field"

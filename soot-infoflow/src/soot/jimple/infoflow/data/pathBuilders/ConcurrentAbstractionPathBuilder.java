@@ -69,6 +69,10 @@ public abstract class ConcurrentAbstractionPathBuilder extends AbstractAbstracti
 				res.clear();
 				break;
 			}
+		/* 	if (curResIdx > 3) {
+				System.out.println("build path limit: " + curResIdx);
+				break;
+			} */
 
 			curResIdx++;
 			// checking if the execution time exceeds the configured totalTime and logging

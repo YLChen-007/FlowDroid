@@ -1,0 +1,5 @@
+<org.apache.hadoop.hdfs.server.namenode.NameNode: org.apache.hadoop.hdfs.server.common.HdfsServerConstants.StartupOption parseArguments(java.lang.String[])> -> _SOURCE_
+<org/apache/hadoop/util/Shell: java.lang.String execCommand(java.lang.String[])> -> _SINK_
+
+
+

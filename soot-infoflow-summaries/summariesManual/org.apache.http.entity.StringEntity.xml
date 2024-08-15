@@ -91,12 +91,7 @@
 			</flows>
 		</method>
 		<method id="void setChunked(boolean)">
-			<clears>
-				<clear sourceSinkType="Field"
-						AccessPath="[org.apache.http.entity.AbstractHttpEntity: boolean chunked]"
-						AccessPathTypes="[boolean]" />
-			 </clears>
-			 <flows> 
+			<flows>
 				<flow isAlias="false" typeChecking="false">
 					<from sourceSinkType="Parameter" ParameterIndex="0" />
 					<to sourceSinkType="Field"

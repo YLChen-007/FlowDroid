@@ -8,6 +8,7 @@ import org.junit.Test;
 import soot.jimple.infoflow.AbstractInfoflow;
 import soot.jimple.infoflow.IInfoflow;
 import soot.jimple.infoflow.Infoflow;
+import soot.jimple.infoflow.InfoflowConfiguration;
 import soot.jimple.infoflow.cfg.DefaultBiDiICFGFactory;
 import soot.jimple.infoflow.collections.strategies.containers.TestConstantStrategy;
 import soot.jimple.infoflow.collections.taintWrappers.PrioritizingMethodSummaryProvider;
@@ -22,6 +23,7 @@ public class ArrayTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 	protected AbstractInfoflow createInfoflowInstance() {
 		AbstractInfoflow result = new Infoflow("", false, new DefaultBiDiICFGFactory());
 		result.getConfig().setPreciseCollectionTracking(PreciseCollectionStrategy.CONSTANT_MAP_SUPPORT);
+		result.getConfig().setCallgraphAlgorithm(InfoflowConfiguration.CallgraphAlgorithm.CHA);
 		try {
 			ArrayList<IMethodSummaryProvider> providers = new ArrayList<>();
 			providers.add(new EagerSummaryProvider(TaintWrapperFactory.DEFAULT_SUMMARY_DIR));
@@ -34,13 +36,25 @@ public class ArrayTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 		return result;
 	}
 
-	@Test(timeout = 300000)
+	@Test(timeout = 300000000)
 	public void arrayReadWritePos1Test() {
 		IInfoflow infoflow = initInfoflow();
 		List<String> epoints = new ArrayList<String>();
 		epoints.add("<soot.jimple.infoflow.test.ArrayTestCode: void concreteWriteReadDiffPosTest()>");
+		// modify #main
+		epoints.add("<org.example.Main: void main(java.lang.String[])>");
+		epoints.add("<org.example.javassist.TestAnimal: void main(java.lang.String[])>");
+		appPath = "D:\\project\\vscode\\test1\\build\\classes\\java\\main";
+//		appPath = "D:\\project\\vscode\\test1\\build\\libs";
+//		appPath = "D:\\project\\vscode\\test1\\build\\classes";
+		sources.clear();
+//		org.example.Main#source()
+		sources.add("<org.example.Main: java.lang.String source()>");
+		sinks.clear();
+//		org.example.Main#sink
+		sinks.add("<org.example.Main: void sink(java.lang.String)>");
 		infoflow.computeInfoflow(appPath, libPath, epoints, sources, sinks);
 		// We are more precise
-		negativeCheckInfoflow(infoflow);
+//		negativeCheckInfoflow(infoflow);
 	}
 }

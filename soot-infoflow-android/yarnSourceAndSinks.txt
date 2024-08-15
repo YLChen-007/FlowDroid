@@ -1,0 +1,9 @@
+<com.FakeHadoopSceneClass: java.lang.String mock_foo()> -> _SOURCE_
+<org.apache.hadoop.yarn.api.records.impl.pb.ContainerLaunchContextPBImpl: java.util.Map getEnvironment()> -> _SOURCE_
+<org.apache.hadoop.yarn.api.records.ContainerLaunchContext: java.util.Map getEnvironment()> -> _SOURCE_
+<java.io.IOException: void <init>(java.lang.String)> -> _SINK_
+<org.apache.commons.logging.Log: void info(java.lang.Object,java.lang.Throwable)> -> _SINK_
+<org.apache.commons.logging.Log: void info(java.lang.Object)> -> _SINK_
+<org.apache.hadoop.util.Shell$ShellCommandExecutor: void <init>(java.lang.String,java.io.File,java.util.Map)> -> _SINK_
+<org.apache.hadoop.util.Shell$ShellCommandExecutor: void <init>(java.lang.String,java.io.File,java.util.Map,long)> -> _SINK_
+<org.apache.hadoop.util.Shell$ShellCommandExecutor: void <init>(java.lang.String,java.io.File,java.util.Map,long,boolean)> -> _SINK_

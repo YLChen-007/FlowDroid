@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.xml.stream.XMLStreamException;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import soot.jimple.infoflow.AbstractInfoflow;
@@ -76,12 +75,6 @@ public class SummaryTaintWrapperTests extends soot.jimple.infoflow.test.methodSu
 		// TODO: move final attribute toward upstream
 		testNoFlowForMethod(
 				"<soot.jimple.infoflow.test.methodSummary.ApiClassClient: void iterativeApplyIsOverapproximation()>");
-	}
-
-	@Override
-	@Ignore("Not supported with the auto-generated method summaries")
-	public void streamWriteReadTest() {
-		//
 	}
 
 }

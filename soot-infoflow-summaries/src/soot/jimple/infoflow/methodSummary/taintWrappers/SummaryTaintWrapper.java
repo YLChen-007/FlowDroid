@@ -238,9 +238,10 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 	@Override
 	public void initialize(InfoflowManager manager) {
 		this.manager = manager;
-		if (containerStrategyFactory != null)
-			this.containerStrategy = containerStrategyFactory.create(manager);
 
+		if (containerStrategyFactory != null) {
+			this.containerStrategy = containerStrategyFactory.create(manager);
+		}
 		// Load all classes for which we have summaries to signatures
 		Set<String> loadableClasses = flows.getAllClassesWithSummaries();
 		if (loadableClasses != null) {
@@ -698,7 +699,7 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 				boolean killTaint = false;
 				if (killIncomingTaint != null && flowsInCallee.hasClears()) {
 					for (MethodClear clear : flowsInCallee.getAllClears()) {
-						if (clearMatchesTaint(clear, taint, stmt)) {
+						if (flowMatchesTaint(clear, taint, stmt)) {
 							killTaint = true;
 							preventPropagation |= clear.preventPropagation();
 							break;
@@ -847,10 +848,6 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 		if (flow.source().getGap() != null && flow.source().getType() == SourceSinkType.Return)
 			return null;
 		if (flow.sink().getGap() != null && flow.sink().getType() == SourceSinkType.Return)
-			return null;
-
-		// If the flow manipulates a constraint, the outcome may be questionable
-		if (flow.sink().getConstraintType().isAction())
 			return null;
 
 		// Reverse the flow if necessary
@@ -1930,7 +1927,7 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 				boolean preventPropagation = false;
 				if (flowsInCallee.hasClears()) {
 					for (MethodClear clear : flowsInCallee.getAllClears()) {
-						if (clear.isAlias(taint) && clearMatchesTaint(clear, taint, stmt)) {
+						if (clear.isAlias(taint) && flowMatchesTaint(clear, taint, stmt)) {
 							killTaint = true;
 							preventPropagation = clear.preventPropagation();
 							break;
@@ -2045,7 +2042,7 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 			for (Taint taint : taintsFromAP) {
 				if (!killIncomingTaint.value && flowsInCallee.hasClears()) {
 					for (MethodClear clear : flowsInCallee.getAllClears()) {
-						if (clearMatchesTaint(clear, taint, stmt)) {
+						if (flowMatchesTaint(clear, taint, stmt)) {
 							killIncomingTaint.value = true;
 							break;
 						}
@@ -2286,16 +2283,6 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 				: state;
 	}
 
-	protected Tristate matchesConstraintsOnClear(final AbstractFlowSinkSource flowSource,
-			final AbstractMethodSummary flow, final Taint taint, final Stmt stmt) {
-		// On clears, we need to under-approximate. If the clear is only valid when a
-		// constraint matches and we don't have support on constraints, we refrain from
-		// clearing the taint.
-		if (flowSource.isConstrained() && containerStrategy == null)
-			return Tristate.FALSE();
-		return matchesConstraints(flowSource, flow, taint, stmt);
-	}
-
 	protected Tristate matchShiftLeft(final AbstractFlowSinkSource flowSource, final AbstractMethodSummary flow,
 			final Taint taint, final Stmt stmt) {
 		ContainerContext[] taintContext = taint.getAccessPath().getFirstFieldContext();
@@ -2330,29 +2317,18 @@ public class SummaryTaintWrapper implements IReversibleTaintWrapper, ICollection
 	}
 
 	/**
-	 * Checks whether the given flow summary the given taint
+	 * Checks whether the given source matches the given taint
 	 *
-	 * @param flow  The flow summary to match
+	 * @param flow  The flow to match
 	 * @param taint The taint to match
-	 * @param stmt  The statement at which to perform the mapping
-	 * @return True if the given flow summary matches the given taint, otherwise
-	 *         false
+	 * @return True if the given source matches the given taint, otherwise false
 	 */
 	protected boolean flowMatchesTaint(final MethodFlow flow, final Taint taint, final Stmt stmt) {
 		return !flowMatchesTaintInternal(flow.source(), flow, taint, stmt, this::matchesConstraints).isFalse();
 	}
 
-	/**
-	 * Checks whether the given clear summary the given taint
-	 *
-	 * @param clear The clear summary to match
-	 * @param taint The taint to match
-	 * @param stmt  The statement at which to perform the mapping
-	 * @return True if the given clear summary matches the given taint, otherwise
-	 *         false
-	 */
-	protected boolean clearMatchesTaint(final MethodClear clear, final Taint taint, final Stmt stmt) {
-		return flowMatchesTaintInternal(clear.getClearDefinition(), clear, taint, stmt, this::matchesConstraintsOnClear)
+	protected boolean flowMatchesTaint(final MethodClear flow, final Taint taint, final Stmt stmt) {
+		return flowMatchesTaintInternal(flow.getClearDefinition(), flow, taint, stmt, this::matchesConstraints)
 				.isTrue();
 	}
 
