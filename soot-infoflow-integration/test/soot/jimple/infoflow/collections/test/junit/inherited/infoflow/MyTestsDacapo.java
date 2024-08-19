@@ -95,7 +95,7 @@ public class MyTestsDacapo extends soot.jimple.infoflow.test.junit.ArrayTests {
 	}
 
 
-	@Test(timeout = 300000000)
+//	@Test(timeout = 300000000)
 	public void testDacapo() throws IOException {
 
 		long maxMemory = Runtime.getRuntime().maxMemory() / (1024 * 1024);

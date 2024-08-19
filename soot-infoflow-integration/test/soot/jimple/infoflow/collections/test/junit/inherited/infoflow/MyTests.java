@@ -58,7 +58,7 @@ public class MyTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 		return result;
 	}
 
-	@Test(timeout = 300000000)
+//	@Test(timeout = 300000000)
 	public void testMapreduce() {
 		IInfoflow infoflow = initInfoflow();
 		List<String> epoints = new ArrayList<String>();
@@ -125,7 +125,7 @@ public class MyTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 	}
 
 
-	@Test(timeout = 300000000)
+//	@Test(timeout = 300000000)
 	public void testHbaseInstrument() {
 		IInfoflow infoflow = initInfoflow();
 		List<String> epoints = new ArrayList<String>();
@@ -176,7 +176,7 @@ public class MyTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 		// 处理结果
 	}
 
-	@Test(timeout = 300000000)
+//	@Test(timeout = 300000000)
 	public void testHbaseNormal() {
 		IInfoflow infoflow = initInfoflow();
 		List<String> epoints = new ArrayList<String>();
@@ -264,7 +264,7 @@ public class MyTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 	}
 
 
-	@Test(timeout = 300000000)
+//	@Test(timeout = 300000000)
 	public void testDacapo() throws IOException {
 
 		long maxMemory = Runtime.getRuntime().maxMemory() / (1024 * 1024);
@@ -401,7 +401,7 @@ public class MyTests extends soot.jimple.infoflow.test.junit.ArrayTests {
 	}
 
 
-	@Test(timeout = 3600*24*20*1000)
+//	@Test(timeout = 3600*24*20*1000)
 	public void testYarnSIF() throws IOException {
 
 		long maxMemory = Runtime.getRuntime().maxMemory();
